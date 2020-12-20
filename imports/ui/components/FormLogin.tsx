@@ -9,7 +9,7 @@ const FormLogin = (props:any):JSX.Element => {
         password: '',
     });
     const { username, phone, password } = state;
-    const handleChange = (e:React.ChangeEvent<HTMLInputElement>):void => {
+    const handleChange = (e):void => {
         const inputValue:string = e.target.value;
         const inputName:string = e.target.name;
         setState(prevState=> (

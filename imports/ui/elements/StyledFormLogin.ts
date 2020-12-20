@@ -5,8 +5,8 @@ const StyledFormLogin = styled.div`
         background: ${({theme}) => theme.searchBar.color.labelBackground};
         border-radius: 0.7rem;
         padding-left: 2.5rem;
-        padding-right: 2.2rem;
-        height: 3.5rem;
+        padding-right: 2.5rem;
+        height: 2rem;
         width: 18rem;
         display: flex;
         flex-direction: row;
@@ -20,10 +20,10 @@ const StyledFormLogin = styled.div`
         margin-right: 1.5rem;
     }
     .input {
-        font-size: 1.5rem;
+        font-size: 1rem;
         font-weight: 400;
-        line-height: 2rem;
-        min-height: 2rem;
+        line-height: 1rem;
+        min-height: 1rem;
         outline: none;
         width: 100%;
         user-select: text;
@@ -33,16 +33,16 @@ const StyledFormLogin = styled.div`
         &::placeholder {
             color: ${({theme}) => theme.searchBar.color.placeholder};
             opacity: 1;
-            font-size: 1.4rem;
+            font-size: 1rem;
         }
     }
     .loginBtn {
-        width: 22.7rem;
+        width: 100%;
         border-radius: 0.7rem;
         padding-left: 2.5rem;
-        padding-right: 2.2rem;
-        height: 3.5rem;
-        font-size: 1.2rem;
+        padding-right: 2.5rem;
+        height: 2rem;
+        font-size: 1rem;
         background: ${ ({
                     theme}) => theme.rightImg.color.bgGreen};
         color: white;

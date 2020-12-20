@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StyledRightImg from '../theme/StyledRightImg';
+import StyledRightImg from '../elements/StyledRightImg';
 
 const RightImg = (props:any):JSX.Element => {
   return (

@@ -16,32 +16,33 @@ const StyledRightImg = styled.div `
     `}
 
     .rightImg--image {
-        width: 25rem;
-        height: 25rem;
-        margin-bottom: 2.8rem;
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 1rem;
     }
     .rightImg--title {
-        font-size: 3.2rem;
-        margin-bottom: 1.8rem;
+        font-size: 2rem;
+        margin-bottom: 1rem;
         color: ${ ({
         theme}) => theme.rightImg.color.darkGrey};
         font-weight: 300;
     }
     .rightImg--div {
-        margin-bottom: 3rem;
-        width: 42rem;
+        margin-bottom: 1rem;
+        width: 100%;
     }
     .rightImg--p {
         text-align: center;
         color: ${ ({
             theme}) => theme.rightImg.color.mediumGrey};
-        font-size: 1.4rem;
+        font-size: 1rem;
         line-height: 2rem;
-        margin-bottom: 3.4rem;
+        margin-bottom: 1rem;
+        margin-top: 0;
     }
     .rightImg--divider {
         width: 100%;
-        height: 0.2rem;
+        height: 0.1rem;
         background: ${ ({
                 theme}) => theme.rightImg.color.lightGrey};
         margin-bottom: 0.1rem;
