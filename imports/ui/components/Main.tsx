@@ -7,11 +7,11 @@ import Right from './Right';
 
 import StylesdMain from '../elements/StyledMain';
 import { ChatsCollection } from '../../api/chats';
-
+import { findChats } from '../../api/helpers';
 const Main = () => {
   Tracker.autorun(() =>{
     Meteor.subscribe('chats.mine');
-    console.log('chats', ChatsCollection.find().fetch());
+    console.log('chats', findChats());
   })
   return (
       <StylesdMain>

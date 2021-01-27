@@ -10,7 +10,7 @@ const Chatlist = (props:any):JSX.Element => {
         return chats.map((chat:Chat)=> {
             return (
                 <ChatItem
-                    key={chat._id}
+                    key={chat.id}
                     {...chat}
                 />            
             )

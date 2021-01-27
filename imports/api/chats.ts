@@ -6,11 +6,11 @@ import { Chat } from './models';
 
 export const ChatsCollection = new Mongo.Collection<Chat>('Chats')
 
-export const dummyChats:Chat[] = [
+export const dummyChats:Chat[] = [    
     {
         title: "",
-        picture: "",
-        participants: ["kKbK7dA7ZiD2ZEB6W","5Qw9RGPGv2AoSzyri"],
+        picture: "",        
+        participants: ["ekhsdpCwu589rfiPE","5Qw9RGPGv2AoSzyri"],
         lastMessage: {
             content: "Salut, ca va ?",
             createdAt: moment()
@@ -20,7 +20,7 @@ export const dummyChats:Chat[] = [
     {
         title: "",
         picture: "",
-        participants: ["NmCALfc3dZa42GrQD","kKbK7dA7ZiD2ZEB6W"],
+        participants: ["NmCALfc3dZa42GrQD","ekhsdpCwu589rfiPE"],
         lastMessage: {
             content: "Salut, bien ou bien ?",
             createdAt: moment()
@@ -41,7 +41,7 @@ export const dummyChats:Chat[] = [
     }
 ]
 
-if(Meteor.isServer) {
+if(Meteor.isServer) {    
     Meteor.publish('chats.all', function(){
         return ChatsCollection.find();
     });
