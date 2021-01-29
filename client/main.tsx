@@ -13,7 +13,6 @@ Meteor.startup(() => {
       render(<App />, document.getElementById('react-target'));
     }
     else {
-      console.log('Utilisateur est pas prêt')
     }
   })
   

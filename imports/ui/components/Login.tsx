@@ -5,6 +5,7 @@ import { Accounts } from 'meteor/accounts-base';
 import RightImg from "./RightImg"
 import FormLogin from "./FormLogin"
 
+
 const messageText:string = "Connectez vous afin de lancer une conversation"
 
 const Login = (props:any):JSX.Element => {

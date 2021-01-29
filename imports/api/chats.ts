@@ -10,7 +10,7 @@ export const dummyChats:Chat[] = [
     {
         title: "",
         picture: "",        
-        participants: ["ekhsdpCwu589rfiPE","5Qw9RGPGv2AoSzyri"],
+        participants: ["PwZuL9chJxjc6vPxF","ke2tgSuY4TyQ7pCXa"],
         lastMessage: {
             content: "Salut, ca va ?",
             createdAt: moment()
@@ -20,7 +20,7 @@ export const dummyChats:Chat[] = [
     {
         title: "",
         picture: "",
-        participants: ["NmCALfc3dZa42GrQD","ekhsdpCwu589rfiPE"],
+        participants: ["8kMuE27zvpHGqhJXu","PwZuL9chJxjc6vPxF"],
         lastMessage: {
             content: "Salut, bien ou bien ?",
             createdAt: moment()
@@ -31,7 +31,7 @@ export const dummyChats:Chat[] = [
     {
         title: "",
         picture: "",
-        participants: ["5Qw9RGPGv2AoSzyri","NmCALfc3dZa42GrQD"],
+        participants: ["yAKWfnmkYX8B4CXwd","8kMuE27zvpHGqhJXu"],
         lastMessage: {
             content: "Salut, ma couille ?",
             createdAt: moment()

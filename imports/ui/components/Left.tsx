@@ -6,10 +6,12 @@ import Header from './Header';
 import Avatar from './Avatar';
 import Status from './Status';
 import Searchbar from './Searchbar';
+import Chatlist from "./Chatlist"
 
 const icons:string[] = ["circle-notch", "comment-alt", "ellipsis-v"];
 
-const Left = () => {
+const Left = (props:any):JSX.Element => {
+  const { chats } = props;
   return (
     <StyledLeft>
         <Header icons={icons} iconClass="greyIcon">
@@ -17,6 +19,7 @@ const Left = () => {
         </Header>
         <Status/>
         <Searchbar/>
+        <Chatlist chats={chats}/>
     </StyledLeft>
   )
 };

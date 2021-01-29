@@ -1,11 +1,15 @@
 import React from 'react';
+import Moment from 'react-moment';
 
 import StyledChatItem from '../elements/StyledChatItem';
 import Avatar from './Avatar';
+import moment from 'moment';
 
 const ChatItem = (props:any):JSX.Element => {
     const { title, picture, lastMessage } = props;
-    const { content, createdAt } = lastMessage
+    const { content, createdAt } = lastMessage;
+    const now:string = moment().format("D/MM/Y");
+    const today:boolean = now === moment(createdAt).format("D/MM/Y");
   return (
     <StyledChatItem>
         <Avatar large avatar_url={picture}/>
@@ -15,7 +19,17 @@ const ChatItem = (props:any):JSX.Element => {
                     {title}
                 </span>
                 <div className="content--line1__date">
-                    {createdAt}
+                    {today ? (
+                    <Moment format="HH:mm">
+                        {createdAt}
+                    </Moment>
+                    ):(
+                    <Moment format="D/MM/Y">
+                        {createdAt}
+                    </Moment>  
+                    )}
+
+
                 </div>
             </div>
             <div className="content--line1">

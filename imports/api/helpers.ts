@@ -18,8 +18,7 @@ export const createDummyUsers = (users:User[]):void => {
 
 export const createDummyChats = (chats:Chat[]):void => {
     chats.forEach(chat => {
-        ChatsCollection.insert(chat);
-        
+        ChatsCollection.insert(chat);        
     });
 }
 
@@ -48,6 +47,5 @@ const findOtherId = (participants: string[]):string => {
 }
 
 const findOtherUser = (_id:string):User => {
-    console.log('users = ',Meteor.users.findOne("ekhsdpCwu589rfiPE"));
     return Meteor.users.findOne(_id)
 }
