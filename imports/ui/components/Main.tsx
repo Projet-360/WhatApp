@@ -14,6 +14,7 @@ import { findChats } from '../../api/helpers';
 const Main = () => {
   Tracker.autorun(() =>{
     Meteor.subscribe('chats.mine');
+    Meteor.subscribe('messages.all');
   });
 
   const [messageVisible, setMessageVisible] = React.useState<boolean>(false);
