@@ -13,113 +13,118 @@ if(Meteor.isServer) {
     Meteor.publish('messages.all', function(){
         return MessagesCollection.find();
     });
+    Meteor.methods({
+      'message.insert': function(message) {
+        return MessagesCollection.insert(message);
+      }
+    });
 }
 
 export const DummyMessages:Message[] = [
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().subtract(2, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().subtract(2, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().subtract(2, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().subtract(2, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().subtract(1, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().subtract(1, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().subtract(1, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().subtract(1, 'days').toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "WJrQ4oQQqaaQuksTZ",
+          chatId: "4sNDtFFSMvZzACANi",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,
         },
         {
-          chatId: "LnpQMJnoiis5snAsm",
+          chatId: "3ZsaFfmDTC2oe4Y9M",
           content: "Salut a va ?",
           createdAt: moment().toDate(),
           type: MessageType.TEXT,

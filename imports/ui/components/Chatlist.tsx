@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Chat } from '../../api/models'
-import StyledChatList from '../elements/StyledChatList';
+import StyledChatlist from '../elements/StyledChatlist';
 import ChatItem from './ChatItem';
 
 const Chatlist = (props:any):JSX.Element => {
@@ -20,9 +20,9 @@ const Chatlist = (props:any):JSX.Element => {
         })
     }
   return (
-    <StyledChatList>
+    <StyledChatlist>
         {renderChats()}
-    </StyledChatList>
+    </StyledChatlist>
   )
 };
  
