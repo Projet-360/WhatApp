@@ -9,10 +9,11 @@ import Day from './Day';
 import MessageText from './MessageText';
 
 let isEven:boolean = false;
+let messagesEnd:HTMLDivElement;
 const format:string ="D MMMM Y";
 
 const MessageBox = (props:any):JSX.Element => {
-  const {messages} = props;
+  const {selectedChat, messages} = props;
   messages.forEach(message =>{
     if(!message.senderId) {
       message.ownership = !!message.ownership === isEven ? 'mine' : 'other';
@@ -49,6 +50,13 @@ const MessageBox = (props:any):JSX.Element => {
       )
     })
   }
+
+  const scrollToBottom = ():void => {
+    messagesEnd.scrollIntoView({behavior: "smooth"})
+  }
+  React.useEffect(()=> {
+    scrollToBottom()
+  }, [selectedChat, messages])
    
   const renderDays = ():JSX.Element[] => {
     return newMessages.map((newMessage, index:number) => {
@@ -64,7 +72,8 @@ const MessageBox = (props:any):JSX.Element => {
 //console.log('newMessages', newMessages )
   return (
     <StyledMessageBox>
-{renderDays()}
+      {renderDays()}
+      <div ref={(el:HTMLDivElement)=> messagesEnd = el}></div>
     </StyledMessageBox>
   )
 };
