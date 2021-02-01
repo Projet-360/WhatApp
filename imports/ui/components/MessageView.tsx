@@ -2,6 +2,7 @@ import React from 'react';
 import {Tracker} from 'meteor/tracker'
 import moment from 'moment';
 import { Meteor } from 'meteor/meteor';
+import { withTracker } from 'meteor/react-meteor-data';
 
 import { Chat, Message, MessageType } from '../../api/models';
 import { MessagesCollection } from '../../api/messages';
@@ -60,4 +61,8 @@ const MessageView = (props:any):JSX.Element => {
     )
 }
 
-export default MessageView;
+export default withTracker(({selectedChat}) => {
+    return {
+        messages2: MessagesCollection.find({chatId: selectedChat._id}).fetch()
+    }
+})(MessageView);

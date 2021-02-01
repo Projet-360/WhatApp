@@ -55,7 +55,7 @@ const MessageBox = (props:any):JSX.Element => {
       const dateText:string = newMessage.today ? "aujourd'hui" : newMessage.date ;
       return (
         <div key={index}>
-          <Day date={newMessage.date}/>
+          <Day date={dateText}/>
           {renderMessages(newMessage)}
         </div>
       )
