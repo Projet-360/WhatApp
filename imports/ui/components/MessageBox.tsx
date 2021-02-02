@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import FontAwesome from 'react-fontawesome';
 import _ from 'lodash';
 import moment from 'moment';
+import FlipMove from 'react-flip-move';
 
 import StyledMessageBox from '../elements/StyledMessageBox';
 import Day from './Day';
@@ -45,7 +45,8 @@ const MessageBox = (props:any):JSX.Element => {
         key={message._id}
         msgClass={msgClass}
         content={message.content}
-        ownership={message.ownership} 
+        ownership={message.ownership}
+        createdAt={message.createdAt} 
         />
       )
     })
@@ -72,7 +73,9 @@ const MessageBox = (props:any):JSX.Element => {
 //console.log('newMessages', newMessages )
   return (
     <StyledMessageBox>
-      {renderDays()}
+      <FlipMove>
+        {renderDays()}
+      </FlipMove>      
       <div ref={(el:HTMLDivElement)=> messagesEnd = el}></div>
     </StyledMessageBox>
   )

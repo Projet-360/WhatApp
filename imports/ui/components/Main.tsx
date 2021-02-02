@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor'
-import { Tracker } from 'meteor/tracker'
+import { withTracker } from 'meteor/react-meteor-data'
 import _ from 'lodash'
 
 
@@ -11,17 +11,7 @@ import StylesdMain from '../elements/StyledMain';
 import { Chat } from '../../api/models';
 import { findChats } from '../../api/helpers';
 
-const Main = () => {
-  const [loading , setLoading ] = React.useState<boolean>(true);
-  Tracker.autorun(() =>{
-    const chatsReady:boolean = Meteor.subscribe('chats.mine').ready();
-    const messagesReady:boolean = Meteor.subscribe('messages.all').ready();
-
-    if( chatsReady && messagesReady ) {
-      setLoading(false)
-    }
-  });
-
+const Main = (props:any):JSX.Element => {
   const [messageVisible, setMessageVisible] = React.useState<boolean>(false);
   const [selectedChat, setSelectedChat ] = React.useState<Chat>({});
 
@@ -30,17 +20,17 @@ const Main = () => {
     if(!messageVisible) {
       setMessageVisible(true)
     }
-    const newChat:Chat = _.find(findChats(), {_id})
+    const newChat:Chat = _.find(props.chats, {_id})
     //console.log('selected chat after', newChat);
     setSelectedChat(newChat);
   }
 
   return (
       <StylesdMain>
-        {!loading ? (
+        {!props.loading ? (
           <React.Fragment>
             <Left 
-            chats={findChats()} 
+            chats={props.chats} 
             onChatClick={handleChatClick}
             selectedChat={selectedChat}
             />
@@ -58,4 +48,11 @@ const Main = () => {
   )
 };
 
-export default Main;
+export default withTracker(() => {
+  const chatReady:boolean = Meteor.subscribe('chats.mine').ready();
+  const messageReady:boolean = Meteor.subscribe('messages.all').ready();
+  return {
+    loading: chatReady && messageReady ? false : true,
+    chats: findChats()
+  }
+})(Main);
